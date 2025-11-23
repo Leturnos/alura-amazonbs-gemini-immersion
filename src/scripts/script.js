@@ -5,6 +5,7 @@ let categoriaSelect = document.querySelector("#categoria-select");
 let inputBusca = document.querySelector("#campo-busca");
 let btnBusca = document.querySelector("#botao-busca");
 
+let statusContainer = document.querySelector("#status-container");
 let cardContainer = document.querySelector(".card-container");
 
 let btnAnterior = document.querySelector("#btn-anterior");
@@ -15,11 +16,12 @@ let dadosApi = []; // Armazena os dados originais da API
 let paginaAtual = 1;
 
 async function carregarDados() {
-    cardContainer.innerHTML = `<p class="status-message">Carregando...</p>`; // Feedback visual
+    cardContainer.innerHTML = ""; // Limpa os cards antigos
+    statusContainer.innerHTML = `<p class="status-message">Carregando...</p>`; // Feedback visual
     const userApiKey = apiKeyInput.value;
 
     if (!userApiKey) {
-        cardContainer.innerHTML = `<p class="status-message">Por favor, insira sua chave da API para começar.</p>`;
+        statusContainer.innerHTML = `<p class="status-message">Por favor, insira sua chave da API para começar.</p>`;
         return;
     }
 
@@ -27,10 +29,11 @@ async function carregarDados() {
         const categoria = categoriaSelect.value;
         dadosApi = await buscarDadosDaApi(categoria, paginaAtual, userApiKey);
         renderCards(dadosApi); // Renderiza todos os cards ao carregar
+        statusContainer.innerHTML = ""; // Limpa a mensagem de status
         infoPagina.textContent = `Página ${paginaAtual}`;
     } catch (error) {
         console.error("Erro ao buscar dados da API:", error);
-        cardContainer.innerHTML = `<p class="status-message">Não foi possível carregar os dados. Verifique sua API Key ou a categoria selecionada.</p>`;
+        statusContainer.innerHTML = `<p class="status-message">Não foi possível carregar os dados. Verifique sua API Key.</p>`;
     }
 }
 
@@ -69,6 +72,23 @@ function renderCards(dados) {
     }
 }
 
+async function carregarDadosFicticios() {
+    try {
+        // Adiciona a mensagem de aviso antes de renderizar os cards
+        statusContainer.innerHTML = `<p class="status-message warning"><b>Atenção:</b> Estes são dados fictícios. Para ver os dados em tempo real, insira sua chave da RapidAPI no campo acima.</p>`;
+
+        const response = await fetch('data.json');
+        if (!response.ok) {
+            throw new Error('Não foi possível carregar os dados fictícios.');
+        }
+        const dadosFicticios = await response.json();
+        renderCards(dadosFicticios); 
+    } catch (error) {
+        console.error("Erro ao carregar dados fictícios:", error);
+        cardContainer.innerHTML = `<p class="status-message">Não foi possível carregar os dados fictícios...</p>`;
+    }
+}
+
 // --- Event Listeners ---
 btnBusca.addEventListener("click", handleSearch);
 apiKeyInput.addEventListener("change", () => {
@@ -80,14 +100,31 @@ categoriaSelect.addEventListener("change", () => {
     carregarDados();
 });
 btnProximo.addEventListener("click", () => {
-    paginaAtual++;
-    carregarDados();
+    if (apiKeyInput.value !== "") {
+        paginaAtual++;
+        carregarDados();
+    }
 });
 btnAnterior.addEventListener("click", () => {
-    if (paginaAtual > 1) {
+    if (paginaAtual > 1 && apiKeyInput.value !== "") {
         paginaAtual--;
         carregarDados();
     }
 });
 
-cardContainer.innerHTML = `<p class="status-message">Bem-vindo! Insira sua chave da RapidAPI no campo acima para buscar os mais vendidos.</p>`;
+function iniciarAplicacao() {
+    statusContainer.innerHTML = `<p class="status-message">Bem-vindo! Insira sua chave da RapidAPI no campo acima para buscar os mais vendidos.</p>`;
+    cardContainer.innerHTML = "";
+
+    // Após 5 segundos, se a chave da API ainda não foi inserida, carrega os dados fictícios.
+    setTimeout(() => {
+        if (!apiKeyInput.value) {
+            statusContainer.innerHTML = `<p class="status-message">Carregando dados fictícios do data.json...</p>`;
+            
+            // Aguarda mais um pouco para que a mensagem de "carregando" seja visível
+            setTimeout(carregarDadosFicticios, 2000);
+        }
+    }, 5000);
+}
+
+iniciarAplicacao();

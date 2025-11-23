@@ -172,6 +172,15 @@ main {
     padding: 4rem 1rem;
 }
 
+.status-message.warning {
+    background-color: #4d3800; /* Fundo amarelado escuro */
+    color: #fdd835; /* Texto amarelo claro */
+    border: 1px solid #fdd835;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem; /* Espaço entre o aviso e os cards */
+}
+
 .card-container {
     display: grid;
     /* Cria colunas responsivas: cada uma com no mínimo 350px e no máximo 1 fração do espaço. */
@@ -255,7 +264,7 @@ main {
     background-color: var(--bg-color); /* Cor de fundo */
     padding: 15px 20px; /* Espaçamento interno */
     border-top: 1px solid #3c4043; /* Borda superior */
-    font-size: 0.8rem; /* Tamanho da fonte */
+    font-size: 1rem; /* Tamanho da fonte */
 }
 
 .footer-location {
@@ -297,21 +306,12 @@ main {
         padding: 0 1rem; /* Adiciona espaçamento lateral */
     }
 
-    .card {
-        flex-direction: column; /* Imagem fica em cima do conteúdo */
-        align-items: center; /* Centraliza a imagem */
-    }
-
-    .card-content {
-        align-items: center; /* Centraliza o texto */
-        text-align: center;
-    }
+    
 }
 
 @media (max-width: 480px) {
     header h1 { /* Estilos para o h1 em telas com largura máxima de 480px */
         font-size: 1rem; /* Reduz ainda mais o tamanho da fonte */
-        max-width: 70%; /* Define uma largura máxima */
         word-wrap: break-word; /* Permite a quebra de palavras longas */
     }
 

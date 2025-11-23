@@ -1,0 +1,72 @@
+[
+  {
+    "product_title": "Jujutsu Kaisen Vol. 01",
+    "product_photo": "src/images/jujutsu_kaisen_v1.jpg",
+    "product_price": "R$ 34,90",
+    "rank": 1,
+    "product_url": "https://www.amazon.com.br/Jujutsu-Kaisen-Batalha-Feiticeiros-Vol/dp/6555122072/ref=sr_1_2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-2"
+  },
+  {
+    "product_title": "Spy x Family Vol. 01",
+    "product_photo": "src/images/spyxfamily_v1.jpg",
+    "product_price": "R$ 37,90",
+    "rank": 2,
+    "product_url": "https://www.amazon.com.br/Spy-X-Family-Vol-1/dp/6555123036/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-1"
+  },
+  {
+    "product_title": "Chainsaw Man Vol. 01",
+    "product_photo": "src/images/chainsaw_man_v1.jpg",
+    "product_price": "R$ 36,90",
+    "rank": 3,
+    "product_url": "https://www.amazon.com.br/Chainsaw-Man-Vol-Tatsuki-Fujimoto/dp/6555127333/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-1"
+  },
+  {
+    "product_title": "Watchmen (dc de Bolso)",
+    "product_photo": "src/images/watchmen.jpg",
+    "product_price": "R$ 119,90",
+    "rank": 4,
+    "product_url": "https://www.amazon.com.br/Watchmen-dc-Bolso-Dave-Gibbons/dp/6525933358/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-1"
+  },
+  {
+    "product_title": "Demon Slayer - Kimetsu no Yaiba Vol. 01",
+    "product_photo": "src/images/demon_slayer_v1.jpg",
+    "product_price": "R$ 29,90",
+    "rank": 5,
+    "product_url": "https://www.amazon.com.br/Demon-Slayer-Kimetsu-Yaiba-Vol/dp/8542629280/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-1"
+  },
+  {
+    "product_title": "Absolute Sandman - Volume 1: Edição Definitiva",
+    "product_photo": "src/images/sandman_luxo_v1.jpg",
+    "product_price": "R$ 159,90",
+    "rank": 6,
+    "product_url": "https://www.amazon.com.br/Absolute-Sandman-1-Neil-Gaiman/dp/8573516534/ref=sr_1_4?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-4"
+  },
+  {
+    "product_title": "Batman: o Cavaleiro das Trevas - Edição Absoluta",
+    "product_photo": "src/images/batman_dk.jpg",
+    "product_price": "R$ 69,90",
+    "rank": 7,
+    "product_url": "https://www.amazon.com.br/Batman-Cavaleiro-Trevas-Edi%C3%A7%C3%A3o-Absoluta/dp/652593334X/ref=sr_1_9?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-9"
+  },
+  {
+    "product_title": "Absolute Batman 01 (Volume 1) ",
+    "product_photo": "src/images/batman_absolute.jpg",
+    "product_price": "R$ 17,90",
+    "rank": 8,
+    "product_url": "https://www.amazon.com.br/Absolute-Batman-01-Scott-Snyder/dp/6525940206/ref=sr_1_1?sr=8-1"
+  },
+  {
+    "product_title": "One Piece Vol. 1",
+    "product_photo": "src/images/onepiece_v1.jpg",
+    "product_price": "R$ 39,90",
+    "rank": 9,
+    "product_url": "https://www.amazon.com.br/One-Piece-Ed-Eiichiro-Oda/dp/8573516976/ref=sr_1_2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-2"
+  },
+  {
+    "product_title": "Homem-aranha: a última Caçada de Kraven",
+    "product_photo": "src/images/aranha_kraven.jpg",
+    "product_price": "R$ 79,90",
+    "rank": 10,
+    "product_url": "https://www.amazon.com.br/Homem-Aranha-%C3%9Altima-Ca%C3%A7ada-J-M-DeMatteis/dp/6525908094/ref=sr_1_3?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-3"
+  }
+]
